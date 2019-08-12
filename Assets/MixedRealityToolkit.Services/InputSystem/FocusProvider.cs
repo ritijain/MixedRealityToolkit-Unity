@@ -241,12 +241,12 @@ namespace Microsoft.MixedReality.Toolkit.Input
             /// <summary>
             /// Set hit focus information from a physics raycast.
             /// </summary>
-            public void Set(MixedRealityRaycastHit hit, RayStep ray, int rayStepIndex, float rayDistance)
+            public void Set(MixedRealityRaycastHit hit, RayStep ray, int rayStepIndex, float rayDistance, bool focusIndividualCompoundCollider)
             {
                 raycastHit = hit;
                 graphicsRaycastResult = default(RaycastResult);
 
-                hitObject = hit.transform.gameObject;
+                hitObject = focusIndividualCompoundCollider? hit.collider.gameObject : hit.transform.gameObject;
                 hitPointOnObject = hit.point;
                 hitNormalOnObject = hit.normal;
 
@@ -1075,7 +1075,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
                     case SceneQueryType.SimpleRaycast:
                         if (raycastProvider.Raycast(pointerRays[i], prioritizedLayerMasks, focusIndividualCompoundCollider, out hitInfo))
                         {
-                            hit.Set(hitInfo, pointerRays[i], i, rayStartDistance + hitInfo.distance);
+                            hit.Set(hitInfo, pointerRays[i], i, rayStartDistance + hitInfo.distance, focusIndividualCompoundCollider);
                             return;
                         }
                         break;
@@ -1085,7 +1085,7 @@ namespace Microsoft.MixedReality.Toolkit.Input
                     case SceneQueryType.SphereCast:
                         if (raycastProvider.SphereCast(pointerRays[i], pointer.SphereCastRadius, prioritizedLayerMasks, focusIndividualCompoundCollider, out hitInfo))
                         {
-                            hit.Set(hitInfo, pointerRays[i], i, rayStartDistance + hitInfo.distance);
+                            hit.Set(hitInfo, pointerRays[i], i, rayStartDistance + hitInfo.distance, focusIndividualCompoundCollider);
                             return;
                         }
                         break;
