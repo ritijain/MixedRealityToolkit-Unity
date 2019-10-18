@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 77226385}
   - component: {fileID: 77226384}
   - component: {fileID: 77226382}
-  - component: {fileID: 77226383}
+  - component: {fileID: 77226388}
   m_Layer: 0
   m_Name: Cube (4)
   m_TagString: Untagged
@@ -150,25 +150,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &77226383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 77226381}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855d3e1019018ec47b435cc812e1fbf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapAction:
-    id: 1
-    description: Select
-    axisConstraint: 2
-  color_IdleState: {r: 1, g: 0.8768036, b: 0.4764151, a: 0}
-  color_OnHover: {r: 1, g: 1, b: 0.8066038, a: 0}
-  color_OnSelect: {r: 0.6698113, g: 0.55423605, b: 0, a: 0}
 --- !u!65 &77226384
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -241,6 +222,39 @@ Transform:
   m_Father: {fileID: 628977088}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &77226388
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77226381}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
+  InputActionId: 0
+  isGlobal: 0
+  Dimensions: 1
+  dimensionIndex: 0
+  startDimensionIndex: 0
+  CanSelect: 1
+  CanDeselect: 1
+  VoiceCommand: Select
+  voiceRequiresFocus: 1
+  profiles:
+  - Target: {fileID: 77226381}
+    Themes:
+    - {fileID: 11400000, guid: 87e16c329b6999344978d97866883b6f, type: 2}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Events: []
+  enabledOnStart: 1
 --- !u!1 &112267210
 GameObject:
   m_ObjectHideFlags: 0
@@ -323,7 +337,7 @@ GameObject:
   - component: {fileID: 541829513}
   - component: {fileID: 541829512}
   - component: {fileID: 541829510}
-  - component: {fileID: 541829511}
+  - component: {fileID: 541829516}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -347,25 +361,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &541829511
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 541829509}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855d3e1019018ec47b435cc812e1fbf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapAction:
-    id: 1
-    description: Select
-    axisConstraint: 2
-  color_IdleState: {r: 1, g: 0, b: 0.84705883, a: 0}
-  color_OnHover: {r: 0.98052627, g: 0.7877358, b: 1, a: 0}
-  color_OnSelect: {r: 0.35364285, g: 0, b: 0.46226418, a: 0}
 --- !u!65 &541829512
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -438,6 +433,39 @@ Transform:
   m_Father: {fileID: 628977088}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &541829516
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 541829509}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
+  InputActionId: 0
+  isGlobal: 0
+  Dimensions: 1
+  dimensionIndex: 0
+  startDimensionIndex: 0
+  CanSelect: 1
+  CanDeselect: 1
+  VoiceCommand: Select
+  voiceRequiresFocus: 1
+  profiles:
+  - Target: {fileID: 541829509}
+    Themes:
+    - {fileID: 11400000, guid: fd0280f83386d0440b3646ba9357f28f, type: 2}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Events: []
+  enabledOnStart: 1
 --- !u!1 &553500184
 GameObject:
   m_ObjectHideFlags: 0
@@ -593,7 +621,7 @@ GameObject:
   - component: {fileID: 644915074}
   - component: {fileID: 644915073}
   - component: {fileID: 644915078}
-  - component: {fileID: 644915077}
+  - component: {fileID: 644915079}
   m_Layer: 0
   m_Name: Cube (3)
   m_TagString: Untagged
@@ -673,25 +701,6 @@ Transform:
   m_Father: {fileID: 628977088}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &644915077
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 644915072}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855d3e1019018ec47b435cc812e1fbf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapAction:
-    id: 1
-    description: Select
-    axisConstraint: 2
-  color_IdleState: {r: 0, g: 0.7529412, b: 1, a: 0}
-  color_OnHover: {r: 0.6745283, g: 0.9094047, b: 1, a: 0}
-  color_OnSelect: {r: 0, g: 0.30121303, b: 0.5471698, a: 0}
 --- !u!54 &644915078
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -708,6 +717,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &644915079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 644915072}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
+  InputActionId: 0
+  isGlobal: 0
+  Dimensions: 1
+  dimensionIndex: 0
+  startDimensionIndex: 0
+  CanSelect: 1
+  CanDeselect: 1
+  VoiceCommand: Select
+  voiceRequiresFocus: 1
+  profiles:
+  - Target: {fileID: 644915072}
+    Themes:
+    - {fileID: 11400000, guid: 376d04fca8942054f969367a5d8af9a6, type: 2}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Events: []
+  enabledOnStart: 1
 --- !u!1 &728193945
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +869,7 @@ GameObject:
   - component: {fileID: 833224831}
   - component: {fileID: 833224830}
   - component: {fileID: 833224828}
-  - component: {fileID: 833224829}
+  - component: {fileID: 833224834}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -851,25 +893,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &833224829
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 833224827}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855d3e1019018ec47b435cc812e1fbf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapAction:
-    id: 1
-    description: Select
-    axisConstraint: 2
-  color_IdleState: {r: 0, g: 0.6901961, b: 0.1764706, a: 0}
-  color_OnHover: {r: 0.6556604, g: 1, b: 0.66087765, a: 0}
-  color_OnSelect: {r: 0, g: 0.3207547, b: 0.020473741, a: 0}
 --- !u!65 &833224830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -942,6 +965,39 @@ Transform:
   m_Father: {fileID: 628977088}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &833224834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 833224827}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
+  InputActionId: 0
+  isGlobal: 0
+  Dimensions: 1
+  dimensionIndex: 0
+  startDimensionIndex: 0
+  CanSelect: 1
+  CanDeselect: 1
+  VoiceCommand: Select
+  voiceRequiresFocus: 1
+  profiles:
+  - Target: {fileID: 833224827}
+    Themes:
+    - {fileID: 11400000, guid: 0dacfc404f84fad4fb4f50a513178ed7, type: 2}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Events: []
+  enabledOnStart: 1
 --- !u!1 &845975224
 GameObject:
   m_ObjectHideFlags: 0
@@ -1097,7 +1153,7 @@ GameObject:
   - component: {fileID: 914706312}
   - component: {fileID: 914706311}
   - component: {fileID: 914706309}
-  - component: {fileID: 914706310}
+  - component: {fileID: 914706315}
   m_Layer: 0
   m_Name: Cube (5)
   m_TagString: Untagged
@@ -1121,25 +1177,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &914706310
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 914706308}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 855d3e1019018ec47b435cc812e1fbf2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tapAction:
-    id: 1
-    description: Select
-    axisConstraint: 2
-  color_IdleState: {r: 0, g: 0.7169812, b: 0.67269224, a: 1}
-  color_OnHover: {r: 0.6084906, g: 1, b: 0.9529333, a: 1}
-  color_OnSelect: {r: 0, g: 0.31132078, b: 0.29649597, a: 1}
 --- !u!65 &914706311
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1212,6 +1249,39 @@ Transform:
   m_Father: {fileID: 628977088}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &914706315
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 914706308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
+  InputActionId: 0
+  isGlobal: 0
+  Dimensions: 1
+  dimensionIndex: 0
+  startDimensionIndex: 0
+  CanSelect: 1
+  CanDeselect: 1
+  VoiceCommand: Select
+  voiceRequiresFocus: 1
+  profiles:
+  - Target: {fileID: 914706308}
+    Themes:
+    - {fileID: 11400000, guid: 841478f0c14705443a04f88f1a17ce49, type: 2}
+  OnClick:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  Events: []
+  enabledOnStart: 1
 --- !u!1001 &1177896514
 PrefabInstance:
   m_ObjectHideFlags: 0
