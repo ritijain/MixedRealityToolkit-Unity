@@ -3137,8 +3137,58 @@ PrefabInstance:
       propertyPath: m_Text
       value: "Or simply look at the \ntarget & air-tap."
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6240280233202515385, guid: 3854086038d827a4d80e796c7605215b, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3854086038d827a4d80e796c7605215b, type: 3}
+--- !u!1 &4081677527628706188 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6713029128366924985, guid: 3854086038d827a4d80e796c7605215b,
+    type: 3}
+  m_PrefabInstance: {fileID: 4081677527628706187}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4081677527628706189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4081677527628706188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c3d8a4208d4b649529822e217623d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateLinkedTransform: 0
+  moveLerpTime: 2
+  rotateLerpTime: 3
+  scaleLerpTime: 0
+  maintainScale: 1
+  smoothing: 1
+  lifetime: 0
+  orientationType: 4
+  localOffset: {x: 0, y: -1, z: 1}
+  worldOffset: {x: 0, y: 0, z: 0}
+  useAngleStepping: 0
+  tetherAngleSteps: 6
+--- !u!114 &4081677527628706190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4081677527628706188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55691ad5b034fe6966763a6e23818d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedTargetType: 0
+  trackedHandness: 3
+  trackedHandJoint: 2
+  transformOverride: {fileID: 0}
+  additionalOffset: {x: 0, y: 0, z: 0}
+  additionalRotation: {x: 0, y: 0, z: 0}
+  updateSolvers: 1
 --- !u!4 &4737010604937390801 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4961919311305103524, guid: b81ff345fab8e1e449e4b387889fc53c,

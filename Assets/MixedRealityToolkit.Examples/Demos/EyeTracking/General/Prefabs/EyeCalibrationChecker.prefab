@@ -48,7 +48,7 @@ MonoBehaviour:
   OnEyeCalibrationDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7993358608815812380}
+      - m_Target: {fileID: 0}
         m_MethodName: Disengage
         m_Mode: 1
         m_Arguments:
@@ -86,7 +86,7 @@ MonoBehaviour:
   OnNoEyeCalibrationDetected:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7993358608815812380}
+      - m_Target: {fileID: 0}
         m_MethodName: Engage
         m_Mode: 1
         m_Arguments:
@@ -1201,29 +1201,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1410eac1ae94b4d4492a09cc368e152c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Enabled: 1
-  States: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
-  InputAction:
-    id: 0
-    description: 
-    axisConstraint: 0
+  states: {fileID: 11400000, guid: 5eac1712038236e4b8ffdb3893804fe1, type: 2}
   InputActionId: 0
-  IsGlobal: 0
+  isGlobal: 0
   Dimensions: 1
-  StartDimensionIndex: 0
+  dimensionIndex: 0
+  startDimensionIndex: 0
   CanSelect: 0
   CanDeselect: 0
   VoiceCommand: Select
-  RequiresFocus: 1
-  Profiles:
+  voiceRequiresFocus: 1
+  profiles:
   - Target: {fileID: 3090206298689421437}
     Themes:
     - {fileID: 11400000, guid: 0c4c73f326f602744bdcfff481fd6f20, type: 2}
-    HadDefaultTheme: 1
   - Target: {fileID: 3346336528451908390}
     Themes:
     - {fileID: 11400000, guid: 8f8cfb3041153fa45bccb6d664a563ec, type: 2}
-    HadDefaultTheme: 1
   OnClick:
     m_PersistentCalls:
       m_Calls:
@@ -1252,7 +1246,7 @@ MonoBehaviour:
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   Events: []
-  dimensionIndex: 0
+  enabledOnStart: 1
 --- !u!82 &3346336527746956455
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1363,11 +1357,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   eventsToReceive: 0
   debounceThreshold: 0.01
-  touchableCollider: {fileID: 3346336527746956474}
   localForward: {x: 0, y: 0, z: -1}
   localUp: {x: 0, y: 1, z: 0}
   localCenter: {x: 0, y: 0, z: -0.008}
   bounds: {x: 0.032, y: 0.032}
+  touchableCollider: {fileID: 3346336527746956474}
 --- !u!1 &3346336528234303498
 GameObject:
   m_ObjectHideFlags: 0
@@ -1849,9 +1843,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4904067894383384009}
-  - component: {fileID: 7993358608815812380}
   - component: {fileID: 5332254462145107651}
   - component: {fileID: 3622182789032917139}
+  - component: {fileID: 91676431055321802}
+  - component: {fileID: 3462082480975149677}
   m_Layer: 0
   m_Name: EyeTrackingNotification
   m_TagString: Untagged
@@ -1878,20 +1873,6 @@ Transform:
   m_Father: {fileID: 59383073902624433}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7993358608815812380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7304426202717140508}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee03dd1e7aa3e184d8938246d30727a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
-  RotationThreshInDegrees: 3
 --- !u!114 &5332254462145107651
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1929,6 +1910,49 @@ MonoBehaviour:
   shaderPropsToCheckForBlending:
   - _Color
   - _FaceColor
+--- !u!114 &91676431055321802
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304426202717140508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55691ad5b034fe6966763a6e23818d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedTargetType: 0
+  trackedHandness: 3
+  trackedHandJoint: 2
+  transformOverride: {fileID: 0}
+  additionalOffset: {x: 0, y: 0, z: 0}
+  additionalRotation: {x: 0, y: 0, z: 0}
+  updateSolvers: 1
+--- !u!114 &3462082480975149677
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7304426202717140508}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c3d8a4208d4b649529822e217623d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateLinkedTransform: 0
+  moveLerpTime: 2
+  rotateLerpTime: 3
+  scaleLerpTime: 0
+  maintainScale: 1
+  smoothing: 1
+  lifetime: 0
+  orientationType: 4
+  localOffset: {x: 0, y: -1, z: 1}
+  worldOffset: {x: 0, y: 0, z: 0}
+  useAngleStepping: 0
+  tetherAngleSteps: 6
 --- !u!1 &7790974727993840561
 GameObject:
   m_ObjectHideFlags: 0

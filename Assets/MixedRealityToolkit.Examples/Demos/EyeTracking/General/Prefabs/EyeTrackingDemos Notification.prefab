@@ -149,7 +149,6 @@ MonoBehaviour:
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_textAlignment: 514
-  m_isAlignmentEnumConverted: 1
   m_characterSpacing: 0
   m_wordSpacing: 0
   m_lineSpacing: 30
@@ -176,12 +175,13 @@ MonoBehaviour:
   m_verticalMapping: 0
   m_uvLineOffset: 0
   m_geometrySortingOrder: 0
+  m_VertexBufferAutoSizeReduction: 1
   m_firstVisibleCharacter: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
-    textComponent: {fileID: 0}
+    textComponent: {fileID: 7706515727995184478}
     characterCount: 72
     spriteCount: 0
     spaceCount: 11
@@ -190,12 +190,9 @@ MonoBehaviour:
     lineCount: 3
     pageCount: 1
     materialCount: 1
-  m_havePropertiesChanged: 0
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_spriteAnimator: {fileID: 0}
-  m_isInputParsingRequired: 0
-  m_inputSource: 0
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2590592260629347757}
   m_subTextObjects:
@@ -321,7 +318,7 @@ MonoBehaviour:
   onLookAtStart:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7943476569482568305}
+      - m_Target: {fileID: 0}
         m_MethodName: Engage
         m_Mode: 1
         m_Arguments:
@@ -364,7 +361,7 @@ MonoBehaviour:
   onLookAway:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7943476569482568305}
+      - m_Target: {fileID: 0}
         m_MethodName: Disengage
         m_Mode: 1
         m_Arguments:
@@ -430,9 +427,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4961919311305103524}
-  - component: {fileID: 7943476569482568305}
   - component: {fileID: 5272872636312312750}
   - component: {fileID: 3645220354646111742}
+  - component: {fileID: 3725641687144130401}
+  - component: {fileID: 5240442620260315474}
   m_Layer: 0
   m_Name: EyeTrackingDemos Notification
   m_TagString: Untagged
@@ -456,20 +454,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7943476569482568305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7317347159838423921}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee03dd1e7aa3e184d8938246d30727a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
-  RotationThreshInDegrees: 3
 --- !u!114 &5272872636312312750
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -507,3 +491,46 @@ MonoBehaviour:
   shaderPropsToCheckForBlending:
   - _Color
   - _FaceColor
+--- !u!114 &3725641687144130401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317347159838423921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55691ad5b034fe6966763a6e23818d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedTargetType: 0
+  trackedHandness: 3
+  trackedHandJoint: 2
+  transformOverride: {fileID: 0}
+  additionalOffset: {x: 0, y: 0, z: 0}
+  additionalRotation: {x: 0, y: 0, z: 0}
+  updateSolvers: 1
+--- !u!114 &5240442620260315474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7317347159838423921}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c3d8a4208d4b649529822e217623d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateLinkedTransform: 0
+  moveLerpTime: 2
+  rotateLerpTime: 3
+  scaleLerpTime: 0
+  maintainScale: 1
+  smoothing: 1
+  lifetime: 0
+  orientationType: 4
+  localOffset: {x: 0, y: -1, z: 1}
+  worldOffset: {x: 0, y: 0, z: 0}
+  useAngleStepping: 0
+  tetherAngleSteps: 6
