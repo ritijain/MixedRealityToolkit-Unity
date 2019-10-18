@@ -11,26 +11,11 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
     /// <summary>
     /// When the button is selected, it triggers starting the specified scene.
     /// </summary>
-    [RequireComponent(typeof(EyeTrackingTarget))]
     public class LoadAdditiveScene : MonoBehaviour
     {
         [SerializeField]
-        [Tooltip("Name of the scene to be loaded when the button is selected.")]
-        private string SceneToBeLoaded = "";
-
-        [SerializeField]
-        [Tooltip("Optional AudioClip which is played when the button is selected.")]
-        private AudioClip audio_OnSelect = null;
-
-        [SerializeField]
         [Tooltip("Timeout in seconds before new scene is loaded.")]
         private float waitTimeInSecBeforeLoading = 0.25f;
-
-
-        public void LoadScene()
-        {
-            LoadScene(SceneToBeLoaded);
-        }
 
         public void LoadScene(string sceneName)
         {
@@ -44,15 +29,12 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
             }
         }
 
-        public static string lastSceneLoaded = "";
         private IEnumerator LoadNewScene(string sceneName)
         {
-            AudioFeedbackPlayer.Instance.PlaySound(audio_OnSelect);
-
             // Let's find out the name of the currently loaded additive scene to unload
             if (SceneManager.sceneCount > 1)
             {
-                lastSceneLoaded = SceneManager.GetSceneAt(1).name;
+                string lastSceneLoaded = SceneManager.GetSceneAt(1).name;
 
                 Debug.Log($"Last scene name: {lastSceneLoaded}");
 
@@ -62,8 +44,8 @@ namespace Microsoft.MixedReality.Toolkit.Examples.Demos.EyeTracking
                 SceneManager.UnloadSceneAsync(lastSceneLoaded);
             }
 
-            Debug.Log($"New scene name: {SceneToBeLoaded}");
-            lastSceneLoaded = SceneToBeLoaded;
+            Debug.Log($"New scene name: {sceneName}");
+
             SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
         }
     }
