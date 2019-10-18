@@ -9,8 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8969287298192836460}
-  - component: {fileID: 6240280233202515385}
   - component: {fileID: 8180799357760373862}
+  - component: {fileID: 8248965987760808720}
+  - component: {fileID: 5114973476757991293}
   m_Layer: 0
   m_Name: EyeTrackingDemos StackedNotification
   m_TagString: Untagged
@@ -34,20 +35,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6240280233202515385
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6713029128366924985}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee03dd1e7aa3e184d8938246d30727a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Speed: 2
-  RotationThreshInDegrees: 3
 --- !u!114 &8180799357760373862
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -63,6 +50,49 @@ MonoBehaviour:
   Size_OnLookAt: {x: 1.2, y: 1.2, z: 1.2}
   SizeChangeSpeed: 0.5
   SizeDeltaThresh: 0.01
+--- !u!114 &8248965987760808720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713029128366924985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b55691ad5b034fe6966763a6e23818d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trackedTargetType: 0
+  trackedHandness: 3
+  trackedHandJoint: 2
+  transformOverride: {fileID: 0}
+  additionalOffset: {x: 0, y: 0, z: 0}
+  additionalRotation: {x: 0, y: 0, z: 0}
+  updateSolvers: 1
+--- !u!114 &5114973476757991293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6713029128366924985}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14c3d8a4208d4b649529822e217623d4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updateLinkedTransform: 1
+  moveLerpTime: 2
+  rotateLerpTime: 3
+  scaleLerpTime: 0
+  maintainScale: 1
+  smoothing: 1
+  lifetime: 0
+  orientationType: 1
+  localOffset: {x: 0, y: -1, z: 0}
+  worldOffset: {x: 0, y: 0, z: 0}
+  useAngleStepping: 0
+  tetherAngleSteps: 6
 --- !u!1001 &4081677525935410100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -204,7 +234,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnLookAtStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6240280233202515385}
+      objectReference: {fileID: 0}
     - target: {fileID: 2701345762782396271, guid: b81ff345fab8e1e449e4b387889fc53c,
         type: 3}
       propertyPath: OnLookAtStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -224,7 +254,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnLookAway.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6240280233202515385}
+      objectReference: {fileID: 0}
     - target: {fileID: 2701345762782396271, guid: b81ff345fab8e1e449e4b387889fc53c,
         type: 3}
       propertyPath: OnLookAway.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -411,7 +441,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnLookAtStart.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6240280233202515385}
+      objectReference: {fileID: 0}
     - target: {fileID: 2701345762782396271, guid: b81ff345fab8e1e449e4b387889fc53c,
         type: 3}
       propertyPath: OnLookAtStart.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
@@ -431,7 +461,7 @@ PrefabInstance:
         type: 3}
       propertyPath: OnLookAway.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 6240280233202515385}
+      objectReference: {fileID: 0}
     - target: {fileID: 2701345762782396271, guid: b81ff345fab8e1e449e4b387889fc53c,
         type: 3}
       propertyPath: OnLookAway.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

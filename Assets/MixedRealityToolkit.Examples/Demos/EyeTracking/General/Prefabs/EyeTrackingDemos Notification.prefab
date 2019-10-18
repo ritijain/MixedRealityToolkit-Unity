@@ -522,15 +522,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c3d8a4208d4b649529822e217623d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  updateLinkedTransform: 0
+  updateLinkedTransform: 1
   moveLerpTime: 2
   rotateLerpTime: 3
   scaleLerpTime: 0
   maintainScale: 1
   smoothing: 1
   lifetime: 0
-  orientationType: 4
-  localOffset: {x: 0, y: -1, z: 1}
+  orientationType: 1
+  localOffset: {x: 0, y: -1, z: 0}
   worldOffset: {x: 0, y: 0, z: 0}
   useAngleStepping: 0
   tetherAngleSteps: 6
